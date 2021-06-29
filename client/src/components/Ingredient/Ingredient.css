@@ -1,0 +1,21 @@
+.ingredient {
+	width: 77%;
+	height: 200px;
+	border: 1px solid rgb(202, 201, 201);
+	background-color: white;
+	padding: 1rem;
+	border-radius: 7px;
+	margin-bottom: 1rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.ingredient-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 50%;
+	height: 100%;
+}
