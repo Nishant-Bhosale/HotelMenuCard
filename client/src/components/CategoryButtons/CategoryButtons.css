@@ -1,0 +1,25 @@
+.buttons-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.category-button {
+	width: 65%;
+	color: white;
+	background-color: rgb(98, 0, 255);
+	border: none;
+	border-radius: 7px;
+	font-size: 1rem;
+	height: 3rem;
+	margin: 0.6rem auto;
+	transition: all 0.3s ease-in-out;
+}
+
+.category-button:hover {
+	color: black;
+	transform: scale(1.1);
+	background-color: rgb(161, 240, 145);
+}

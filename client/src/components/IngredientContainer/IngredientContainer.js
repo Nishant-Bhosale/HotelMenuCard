@@ -4,11 +4,11 @@ import Ingredient from "../Ingredient/Ingredient";
 import "./IngredientContainer.css";
 
 const IngredientContainer = () => {
-	const newContext = useContext(ingredientContext);
+	const dishContext = useContext(ingredientContext);
 
 	return (
 		<div className="container">
-			{newContext.ingredients.map((ingredient, index) => {
+			{dishContext.ingredients.map((ingredient, index) => {
 				return <Ingredient ingredient={ingredient} key={index} />;
 			})}
 		</div>
