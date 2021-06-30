@@ -4,7 +4,7 @@ import "./CategoryButtons.css";
 const CategoryButtons = () => {
 	const dishContext = useContext(ingredientContext);
 
-	const { ingredients } = dishContext;
+	const { filterIngredients, setAllIngredients } = dishContext;
 	const categories = [
 		"All",
 		"Pizza",
@@ -17,12 +17,10 @@ const CategoryButtons = () => {
 	];
 
 	const clicked = (category) => {
-		console.log(`button clicked ${category}`);
-		console.log(category.target.innerHTML);
-		ingredients.filter((ingredient) => {
-			console.log(ingredient.category !== "Pizza");
-			return ingredient.category !== category.target.innerHTML;
-		});
+		if (category.target.innerHTML === "All") {
+			setAllIngredients();
+		}
+		filterIngredients(category.target.innerHTML);
 	};
 
 	return (
@@ -30,7 +28,7 @@ const CategoryButtons = () => {
 			{categories.map((category, index) => {
 				return (
 					<button
-						id={index}
+						key={index}
 						className="category-button"
 						onClick={(category) => clicked(category)}
 					>

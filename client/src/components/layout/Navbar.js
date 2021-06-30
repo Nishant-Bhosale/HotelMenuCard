@@ -5,7 +5,7 @@ const Navbar = () => {
 	return (
 		<div className="navbar">
 			<h3 style={{ marginLeft: "3rem" }}>Hotel Website</h3>
-			<button className="addCartBtn">Add to Cart</button>
+			<button className="addCartBtn">Your Cart</button>
 		</div>
 	);
 };

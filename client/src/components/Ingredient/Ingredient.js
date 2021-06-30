@@ -7,7 +7,7 @@ const Ingredient = (props) => {
 	});
 
 	const { pizzaSize } = size;
-	const { name, price, category } = props.ingredient;
+	const { name, price } = props.ingredient;
 
 	const onChange = (e) => {
 		setSize({

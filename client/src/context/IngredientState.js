@@ -43,14 +43,26 @@ const IngredientState = (props) => {
 				category: "Snacks",
 			},
 		],
+		filtered: [],
 	};
 
 	const [state, dispatch] = useReducer(ingredientReducer, initialState);
+
+	const setAllIngredients = () => {
+		dispatch({ type: "SET_INGREDIENTS" });
+	};
+
+	const filterIngredients = (category) => {
+		dispatch({ type: "FILTER_INGREDIENTS", payload: category });
+	};
 
 	return (
 		<ingredientContext.Provider
 			value={{
 				ingredients: state.ingredients,
+				filtered: state.filtered,
+				filterIngredients,
+				setAllIngredients,
 			}}
 		>
 			{props.children}

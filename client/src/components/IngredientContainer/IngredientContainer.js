@@ -6,11 +6,16 @@ import "./IngredientContainer.css";
 const IngredientContainer = () => {
 	const dishContext = useContext(ingredientContext);
 
+	const { filtered, ingredients } = dishContext;
 	return (
 		<div className="container">
-			{dishContext.ingredients.map((ingredient, index) => {
-				return <Ingredient ingredient={ingredient} key={index} />;
-			})}
+			{filtered.length > 0
+				? filtered.map((ingredient, index) => {
+						return <Ingredient ingredient={ingredient} key={index} />;
+				  })
+				: ingredients.map((ingredient, index) => {
+						return <Ingredient ingredient={ingredient} key={index} />;
+				  })}
 		</div>
 	);
 };
