@@ -9,7 +9,12 @@ const IngredientState = (props) => {
 			{
 				name: "Vegetable Pizza",
 				desc: "Capsicum, Onion, Tomato, Beans, Carrot, Flower, Cheese",
-				price: [160, 310],
+				image:
+					"https://images.pexels.com/photos/4394612/pexels-photo-4394612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				price: {
+					medium: 160,
+					large: 310,
+				},
 				category: "Pizza",
 			},
 			{
