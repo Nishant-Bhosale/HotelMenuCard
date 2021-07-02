@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import ingredientContext from "../../context/IngredientContext";
 import "./Ingredient.css";
 
 const Ingredient = (props) => {
+	const dishContext = useContext(ingredientContext);
+
 	const [size, setSize] = useState({
 		pizzaSize: "medium",
 	});
+
+	const { addIngredients } = dishContext;
 
 	const { pizzaSize } = size;
 	const { name, price } = props.ingredient;
@@ -13,6 +18,10 @@ const Ingredient = (props) => {
 		setSize({
 			[e.target.name]: e.target.value,
 		});
+	};
+
+	const onClickHandler = (ingredient) => {
+		addIngredients(ingredient);
 	};
 
 	return (
@@ -56,7 +65,12 @@ const Ingredient = (props) => {
 				) : (
 					<strong>Price: {price}</strong>
 				)}
-				<button className="add-btn">Add To Cart</button>
+				<button
+					className="add-btn"
+					onClick={() => onClickHandler(props.ingredient)}
+				>
+					Add To Cart
+				</button>
 			</div>
 		</div>
 	);

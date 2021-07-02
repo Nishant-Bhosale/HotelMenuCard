@@ -7,11 +7,17 @@ import {
 
 const reducer = (state, action) => {
 	switch (action.type) {
+		case ADD_INGREDIENTS:
+			return {
+				...state,
+				userIngredients: state.userIngredients.concat(action.payload),
+			};
 		case SET_ALL_INGREDIENTS:
 			return {
 				...state,
 				filtered: state.ingredients,
 			};
+
 		case FILTER_INGREDIENTS:
 			return {
 				...state,
