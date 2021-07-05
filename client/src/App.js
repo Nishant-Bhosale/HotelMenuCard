@@ -1,16 +1,17 @@
 import React from "react";
-import Navbar from "./components/layout/Navbar";
+import UserCart from "./containers/UserCart/UserCart";
+import { Route, Switch } from "react-router-dom";
 import IngredientState from "./context/IngredientState";
-import CategoryButtons from "./components/CategoryButtons/CategoryButtons";
-import IngredientContainer from "./components/IngredientContainer/IngredientContainer";
 import "./App.css";
+import HomePage from "./containers/HomePage/HomePage";
 
 const App = () => {
 	return (
 		<IngredientState>
-			<Navbar />
-			<CategoryButtons />
-			<IngredientContainer />
+			<Switch>
+				<Route path="/" exact component={HomePage} />
+				<Route path="/userCart" exact component={UserCart} />
+			</Switch>
 		</IngredientState>
 	);
 };

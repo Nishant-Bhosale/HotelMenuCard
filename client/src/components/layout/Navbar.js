@@ -1,11 +1,16 @@
 import React from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 	return (
 		<div className="navbar">
-			<h3 style={{ marginLeft: "3rem" }}>Hotel Website</h3>
-			<button className="addCartBtn">Your Cart</button>
+			<Link style={{ marginLeft: "3rem" }} to="/">
+				Hotel Website
+			</Link>
+			<Link className="addCartBtn" to="/userCart">
+				Your Cart
+			</Link>
 		</div>
 	);
 };
