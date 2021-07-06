@@ -5,7 +5,7 @@ import "./UserIngredients.css";
 
 const UserIngredients = () => {
 	const dishContext = useContext(ingredientContext);
-	console.log(dishContext);
+
 	return (
 		<div className="user-ingredients">
 			{dishContext.userIngredients.length <= 0 ? (
