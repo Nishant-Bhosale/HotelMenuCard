@@ -10,16 +10,13 @@
 	margin-bottom: 1rem;
 }
 
-.addCartBtn {
-	margin-right: 4rem;
-}
-
-.navbar ul {
-	display: flex;
-}
-
 .navbar a {
-	color: #fff;
 	padding: 0.45rem;
 	margin: 0 0.25rem;
+}
+
+.nav-link {
+	text-decoration: none;
+	color: white;
+	font-size: 1.2rem;
 }

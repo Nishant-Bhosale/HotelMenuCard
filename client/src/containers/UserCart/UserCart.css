@@ -1,0 +1,19 @@
+#checkout-btn {
+	background-color: green;
+	color: white;
+	border: none;
+	height: 3rem;
+	margin: 1rem auto;
+	border-radius: 7px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	font-size: 1rem;
+	transition: all 0.3s ease-in-out;
+}
+
+#checkout-btn:hover {
+	color: black;
+	transform: scale(1.1);
+	background-color: rgb(161, 240, 145);
+}

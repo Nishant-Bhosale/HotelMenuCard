@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
 	return (
 		<div className="navbar">
-			<Link style={{ marginLeft: "3rem" }} to="/">
+			<Link style={{ marginLeft: "2rem" }} className="nav-link" to="/">
 				Hotel Website
 			</Link>
-			<Link className="addCartBtn" to="/userCart">
+			<Link className="nav-link" to="/userCart">
 				Your Cart
 			</Link>
 		</div>
