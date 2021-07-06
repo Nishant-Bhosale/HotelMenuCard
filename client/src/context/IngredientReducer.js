@@ -17,7 +17,13 @@ const reducer = (state, action) => {
 				...state,
 				filtered: state.ingredients,
 			};
-
+		case REMOVE_INGREDIENTS:
+			return {
+				...state,
+				userIngredients: state.userIngredients.filter((ingredient) => {
+					return ingredient.id !== action.payload.id;
+				}),
+			};
 		case FILTER_INGREDIENTS:
 			return {
 				...state,

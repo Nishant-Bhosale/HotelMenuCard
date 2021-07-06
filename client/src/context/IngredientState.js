@@ -73,8 +73,8 @@ const IngredientState = (props) => {
 		dispatch({ type: ADD_INGREDIENTS, payload: ingredient });
 	};
 
-	const removeIngredients = () => {
-		dispatch({ type: REMOVE_INGREDIENTS });
+	const removeIngredient = (ingredient) => {
+		dispatch({ type: REMOVE_INGREDIENTS, payload: ingredient });
 	};
 
 	return (
@@ -86,7 +86,7 @@ const IngredientState = (props) => {
 				filterIngredients,
 				setAllIngredients,
 				addIngredients,
-				removeIngredients,
+				removeIngredient,
 			}}
 		>
 			{props.children}

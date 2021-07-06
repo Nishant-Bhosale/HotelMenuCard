@@ -11,10 +11,22 @@ const IngredientContainer = () => {
 		<div className="container">
 			{filtered.length > 0
 				? filtered.map((ingredient, index) => {
-						return <Ingredient ingredient={ingredient} key={index} />;
+						return (
+							<Ingredient
+								addToCart={true}
+								ingredient={ingredient}
+								key={index}
+							/>
+						);
 				  })
 				: ingredients.map((ingredient, index) => {
-						return <Ingredient ingredient={ingredient} key={index} />;
+						return (
+							<Ingredient
+								addToCart={true}
+								ingredient={ingredient}
+								key={index}
+							/>
+						);
 				  })}
 		</div>
 	);

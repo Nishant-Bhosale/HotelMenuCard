@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import ingredientContext from "../../context/IngredientContext";
 import Ingredient from "../Ingredient/Ingredient";
 import "./UserIngredients.css";
+
 const UserIngredients = () => {
 	const dishContext = useContext(ingredientContext);
 	console.log(dishContext);
@@ -16,7 +17,13 @@ const UserIngredients = () => {
 			)}
 
 			{dishContext.userIngredients.map((ingredient) => {
-				return <Ingredient ingredient={ingredient} />;
+				return (
+					<Ingredient
+						ingredient={ingredient}
+						addToCart={false}
+						key={ingredient.id}
+					/>
+				);
 			})}
 		</div>
 	);

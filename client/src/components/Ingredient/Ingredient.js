@@ -9,7 +9,7 @@ const Ingredient = (props) => {
 		pizzaSize: "medium",
 	});
 
-	const { addIngredients } = dishContext;
+	const { addIngredients, removeIngredient } = dishContext;
 
 	const { pizzaSize } = size;
 	const { name, price } = props.ingredient;
@@ -65,12 +65,21 @@ const Ingredient = (props) => {
 				) : (
 					<strong>Price: {price}</strong>
 				)}
-				<button
-					className="add-btn"
-					onClick={() => onClickHandler(props.ingredient)}
-				>
-					Add To Cart
-				</button>
+				{props.addToCart ? (
+					<button
+						className="add-btn"
+						onClick={() => onClickHandler(props.ingredient)}
+					>
+						Add To Cart
+					</button>
+				) : (
+					<button
+						className="remove-btn"
+						onClick={() => removeIngredient(props.ingredient)}
+					>
+						Remove From Cart
+					</button>
+				)}
 			</div>
 		</div>
 	);
