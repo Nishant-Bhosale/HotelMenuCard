@@ -1,4 +1,4 @@
-#checkout-btn {
+.checkout-btn {
 	background-color: green;
 	color: white;
 	border: none;
@@ -12,8 +12,16 @@
 	transition: all 0.3s ease-in-out;
 }
 
-#checkout-btn:hover {
+.checkout-btn:hover {
 	color: black;
 	transform: scale(1.1);
 	background-color: rgb(161, 240, 145);
+}
+
+.input-bar {
+	width: 90%;
+	border: none;
+	border-bottom: 1px solid rgb(102, 101, 101);
+	padding: 0.2rem;
+	margin: 0.3rem 0;
 }

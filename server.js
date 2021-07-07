@@ -7,9 +7,10 @@ app.get("/home", (req, res) => {
 	res.send("Hello There");
 });
 
-app.get("/send-info", (req, res) => {
-	const url =
-		"https://api.callmebot.com/whatsapp.php?phone=+917058528287&text=hey+pooja+and+rohan+bhosale&apikey=629767";
+app.post("/send-info", (req, res) => {
+	console.log(req.params);
+	const owner = "+917058528287";
+	const url = `https://api.callmebot.com/whatsapp.php?phone=${owner}&text=hi&apikey=629767`;
 
 	open(url, (error) => {
 		return console.log(error);

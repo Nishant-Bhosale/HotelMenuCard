@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import BackDrop from "../BackDrop/BackDrop";
 import Aux from "../../hocs/Auxiliary/Auxiliary";
 import "./Modal.css";
