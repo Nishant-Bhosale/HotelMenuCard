@@ -7,6 +7,7 @@ import {
 	SET_ALL_INGREDIENTS,
 	FILTER_INGREDIENTS,
 	REMOVE_INGREDIENTS,
+	CHANGE_PRICE,
 } from "./types";
 
 const IngredientState = (props) => {
@@ -18,11 +19,19 @@ const IngredientState = (props) => {
 				id: 1,
 				image:
 					"https://images.pexels.com/photos/4394612/pexels-photo-4394612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-				price: {
-					medium: 160,
-					large: 310,
-				},
+				price: 160,
 				category: "Pizza",
+				priceOption: true,
+			},
+			{
+				name: "Another Pizza",
+				desc: "Capsicum, Onion, Tomato, Beans, Carrot, Flower, Cheese",
+				id: 9,
+				image:
+					"https://images.pexels.com/photos/4394612/pexels-photo-4394612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				price: 160,
+				category: "Pizza",
+				priceOption: true,
 			},
 			{
 				name: "Aloo Tikki",
@@ -77,6 +86,10 @@ const IngredientState = (props) => {
 		dispatch({ type: REMOVE_INGREDIENTS, payload: ingredient });
 	};
 
+	const changePrice = (optionType, id) => {
+		dispatch({ type: CHANGE_PRICE, payload: { optionType, id } });
+	};
+
 	return (
 		<ingredientContext.Provider
 			value={{
@@ -87,6 +100,7 @@ const IngredientState = (props) => {
 				setAllIngredients,
 				addIngredients,
 				removeIngredient,
+				changePrice,
 			}}
 		>
 			{props.children}

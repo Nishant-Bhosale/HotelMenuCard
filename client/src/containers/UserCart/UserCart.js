@@ -41,7 +41,12 @@ const UserCart = () => {
 			},
 		};
 
-		axios.post("/send-info", contact, config).then((res) => {
+		const orderInfo = {
+			...contact,
+			ings: dishContext.userIngredients,
+		};
+
+		axios.post("/send-info", orderInfo, config).then((res) => {
 			console.log(res);
 		});
 	};

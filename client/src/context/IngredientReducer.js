@@ -3,6 +3,7 @@ import {
 	SET_ALL_INGREDIENTS,
 	FILTER_INGREDIENTS,
 	REMOVE_INGREDIENTS,
+	CHANGE_PRICE,
 } from "./types";
 
 const reducer = (state, action) => {
@@ -33,6 +34,22 @@ const reducer = (state, action) => {
 						return ingredient.category === action.payload;
 					}
 				}),
+			};
+		case CHANGE_PRICE:
+			state.ingredients.forEach((ing) => {
+				if (action.payload.id === ing.id) {
+					if (ing.priceOption) {
+						console.log(action.payload);
+						if (action.payload.optionType === "medium") {
+							ing.price = 160;
+						} else if (action.payload.optionType === "large") {
+							ing.price = 310;
+						}
+					}
+				}
+			});
+			return {
+				...state,
 			};
 		default:
 			return state;

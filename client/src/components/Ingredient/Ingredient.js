@@ -9,7 +9,7 @@ const Ingredient = (props) => {
 		pizzaSize: "medium",
 	});
 
-	const { addIngredients, removeIngredient } = dishContext;
+	const { addIngredients, removeIngredient, changePrice } = dishContext;
 
 	const { pizzaSize } = size;
 	const { name, price } = props.ingredient;
@@ -18,6 +18,11 @@ const Ingredient = (props) => {
 		setSize({
 			[e.target.name]: e.target.value,
 		});
+		if (pizzaSize === "medium") {
+			changePrice("large", props.ingredient.id);
+		} else {
+			changePrice("medium", props.ingredient.id);
+		}
 	};
 
 	const onClickHandler = (ingredient) => {
@@ -38,11 +43,9 @@ const Ingredient = (props) => {
 				{props.ingredient.desc ? (
 					<p className="ingredient-desc">{props.ingredient.desc}</p>
 				) : null}
-				{typeof price === "object" ? (
+				{props.ingredient.priceOption && props.addToCart ? (
 					<div className="ingredient-price">
-						<strong>
-							Price: {pizzaSize === "medium" ? price.medium : price.large}
-						</strong>
+						<strong>Price: {pizzaSize === "medium" ? 160 : 310}</strong>
 						<div className="ingredient-input">
 							<input
 								type="radio"
