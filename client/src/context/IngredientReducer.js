@@ -38,8 +38,7 @@ const reducer = (state, action) => {
 		case CHANGE_PRICE:
 			state.ingredients.forEach((ing) => {
 				if (action.payload.id === ing.id) {
-					if (ing.priceOption) {
-						console.log(action.payload);
+					if (ing.category === "Pizza") {
 						if (action.payload.optionType === "medium") {
 							ing.price = 160;
 						} else if (action.payload.optionType === "large") {

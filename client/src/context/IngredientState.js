@@ -31,7 +31,6 @@ const IngredientState = (props) => {
 					"https://images.pexels.com/photos/4394612/pexels-photo-4394612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 				price: 160,
 				category: "Pizza",
-				priceOption: true,
 			},
 			{
 				name: "Aloo Tikki",

@@ -15,6 +15,8 @@ const Ingredient = (props) => {
 	const { name, price } = props.ingredient;
 
 	const onChange = (e) => {
+		console.log(e.target.name);
+		console.log(e.target.value);
 		setSize({
 			[e.target.name]: e.target.value,
 		});
@@ -43,7 +45,7 @@ const Ingredient = (props) => {
 				{props.ingredient.desc ? (
 					<p className="ingredient-desc">{props.ingredient.desc}</p>
 				) : null}
-				{props.ingredient.priceOption && props.addToCart ? (
+				{props.ingredient.category === "Pizza" && props.addToCart ? (
 					<div className="ingredient-price">
 						<strong>Price: {pizzaSize === "medium" ? 160 : 310}</strong>
 						<div className="ingredient-input">
