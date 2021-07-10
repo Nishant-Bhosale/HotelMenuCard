@@ -15,8 +15,6 @@ const Ingredient = (props) => {
 	const { name, price } = props.ingredient;
 
 	const onChange = (e) => {
-		console.log(e.target.name);
-		console.log(e.target.value);
 		setSize({
 			[e.target.name]: e.target.value,
 		});

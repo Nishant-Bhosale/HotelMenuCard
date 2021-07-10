@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Navbar from "../../components/layout/Navbar";
 import ingredientContext from "../../context/IngredientContext";
 import axios from "axios";
@@ -10,6 +10,7 @@ const UserCart = () => {
 	const dishContext = useContext(ingredientContext);
 	const [showModal, setShowModal] = useState(false);
 	const [showBackdrop, setShowBackdrop] = useState(true);
+	const [totalPrice, setTotalPrice] = useState(null);
 	const [contact, setContact] = useState({
 		name: "",
 		email: "",
@@ -18,6 +19,17 @@ const UserCart = () => {
 	});
 
 	const { name, email, phone, address } = contact;
+	const { userIngredients } = dishContext;
+
+	useEffect(() => {
+		let total = 0;
+
+		userIngredients.forEach((ing) => {
+			total += ing.price;
+		});
+
+		setTotalPrice(total);
+	}, [userIngredients]);
 
 	const toggleModal = () => {
 		setShowModal(true);
@@ -43,7 +55,8 @@ const UserCart = () => {
 
 		const orderInfo = {
 			...contact,
-			ings: dishContext.userIngredients,
+			ings: userIngredients,
+			totalPrice,
 		};
 
 		axios.post("/send-info", orderInfo, config).then((res) => {
@@ -55,7 +68,8 @@ const UserCart = () => {
 		<div>
 			<Navbar />
 			<UserIngredients />
-			{dishContext.userIngredients.length <= 0 ? null : (
+
+			{userIngredients.length <= 0 ? null : (
 				<button className="checkout-btn" onClick={toggleModal}>
 					Send Message
 				</button>
@@ -109,6 +123,7 @@ const UserCart = () => {
 					</form>
 				</Modal>
 			) : null}
+			<h3>{totalPrice}</h3>
 		</div>
 	);
 };
