@@ -4,3 +4,13 @@
 	align-items: center;
 	justify-content: center;
 }
+
+@media (min-width: 800px) {
+	.user-ingredients {
+		display: grid;
+		align-items: center;
+		place-items: center;
+		justify-content: center;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

@@ -3,29 +3,38 @@ import ingredientContext from "../../context/IngredientContext";
 import Ingredient from "../Ingredient/Ingredient";
 import "./UserIngredients.css";
 
-const UserIngredients = () => {
+const UserIngredients = (props) => {
 	const dishContext = useContext(ingredientContext);
 
+	const { userIngredients } = dishContext;
 	return (
-		<div className="user-ingredients">
-			{dishContext.userIngredients.length <= 0 ? (
+		<React.Fragment>
+			{userIngredients.length <= 0 ? (
 				<h1 style={{ textAlign: "center", color: "green" }}>
 					No Items found in your Cart
 				</h1>
 			) : (
 				<h1 style={{ textAlign: "center", color: "green" }}>Your Items</h1>
 			)}
-
-			{dishContext.userIngredients.map((ingredient) => {
-				return (
-					<Ingredient
-						ingredient={ingredient}
-						addToCart={false}
-						key={ingredient.id}
-					/>
-				);
-			})}
-		</div>
+			<div className="user-ingredients">
+				{userIngredients.map((ingredient) => {
+					return (
+						<Ingredient
+							ingredient={ingredient}
+							addToCart={false}
+							key={ingredient.id}
+						/>
+					);
+				})}
+			</div>
+			{userIngredients.length > 0 ? (
+				<div className="total-price">
+					<h3 className="total-price-heading">
+						Total Price: {props.totalPrice}
+					</h3>
+				</div>
+			) : null}
+		</React.Fragment>
 	);
 };
 

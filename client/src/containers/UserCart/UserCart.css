@@ -25,3 +25,18 @@
 	padding: 0.2rem;
 	margin: 0.3rem 0;
 }
+
+.total-price {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 7.5rem;
+	padding: 0.4rem;
+	height: 5rem;
+	color: green;
+	background-color: lightgreen;
+	border: 2px solid green;
+	text-align: center;
+	margin: 0.3rem auto;
+	border-radius: 5px;
+}

@@ -67,8 +67,7 @@ const UserCart = () => {
 	return (
 		<div>
 			<Navbar />
-			<UserIngredients />
-			<h3>Total Price: {totalPrice}</h3>
+			<UserIngredients totalPrice={totalPrice} />
 
 			{userIngredients.length <= 0 ? null : (
 				<button className="checkout-btn" onClick={toggleModal}>
