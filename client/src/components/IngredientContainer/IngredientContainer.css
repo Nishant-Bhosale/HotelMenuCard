@@ -5,3 +5,13 @@
 	align-items: center;
 	width: 100%;
 }
+
+@media (min-width: 850px) {
+	.container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		align-items: center;
+		justify-content: center;
+		place-items: center;
+	}
+}

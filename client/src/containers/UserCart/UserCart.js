@@ -68,12 +68,14 @@ const UserCart = () => {
 		<div>
 			<Navbar />
 			<UserIngredients />
+			<h3>Total Price: {totalPrice}</h3>
 
 			{userIngredients.length <= 0 ? null : (
 				<button className="checkout-btn" onClick={toggleModal}>
 					Send Message
 				</button>
 			)}
+
 			{showModal ? (
 				<Modal showBackdrop={showBackdrop} clicked={toggleBackdrop}>
 					<form onSubmit={onSubmitHandler}>
@@ -123,7 +125,6 @@ const UserCart = () => {
 					</form>
 				</Modal>
 			) : null}
-			<h3>{totalPrice}</h3>
 		</div>
 	);
 };

@@ -23,3 +23,9 @@
 	transform: scale(1.1);
 	background-color: rgb(161, 240, 145);
 }
+
+@media (min-width: 640px) {
+	.buttons-container {
+		margin-bottom: 3rem;
+	}
+}

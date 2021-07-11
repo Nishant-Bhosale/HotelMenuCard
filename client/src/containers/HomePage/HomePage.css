@@ -1,0 +1,15 @@
+.background-image {
+	background-image: url("https://images.pexels.com/photos/1045199/pexels-photo-1045199.jpeg?cs=srgb&dl=pexels-cassiano-psomas-1045199.jpg&fm=jpg");
+	background-position: center;
+	background-size: cover;
+	height: 75vh;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+	.background-image {
+		background-origin: content-box;
+		margin-bottom: 3rem;
+	}
+}

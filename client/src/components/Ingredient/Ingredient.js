@@ -33,7 +33,8 @@ const Ingredient = (props) => {
 		<div className="ingredient">
 			<div className="ingredient-image">
 				<img
-					style={{ height: "100%", width: "90%" }}
+					// style={{ height: "100%", width: "90%" }}
+					className="ingredient-main-image"
 					src={props.ingredient.image ? props.ingredient.image : null}
 					alt=""
 				/>
