@@ -16,6 +16,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"concurrently": "^6.2.0",
+		"config": "^3.3.6",
 		"express": "^4.17.1",
 		"nodemon": "^2.0.7",
 		"open": "^8.2.1",
