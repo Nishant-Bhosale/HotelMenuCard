@@ -47,6 +47,24 @@ app.post("/add-dishes", async (req, res) => {
 	}
 });
 
+app.delete("/dishes/:id", async (req, res) => {
+	const id = req.params.id;
+
+	try {
+		const dish = await Dish.findByIdAndDelete(id);
+
+		if (!dish) {
+			return res.status(404).json({ message: "Dish not found." });
+		}
+
+		await dish.remove();
+		res.json({ message: "Deleted Successfully" });
+	} catch (e) {
+		console.log(e);
+		res.status(500).json({ err: "Something went wrong" });
+	}
+});
+
 app.post("/send-info", (req, res) => {
 	const { name, email, phone, address } = req.body;
 	let userInfo = `Name: ${name} \n 
